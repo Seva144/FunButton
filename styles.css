@@ -1,0 +1,109 @@
+/* фон страницы */
+body {
+    /* флекс-контейнер */
+    display: flex;
+    /* выравнивание по центру */
+    justify-content: center;
+    /* без отступов */
+    margin: 0;
+    /* цвет фона */
+    background-color: #e5e5e5;
+}
+/* стили заголовка */
+h1 {
+    /* семейство шрифтов */
+    font-family: "Courier New", Courier, monospace;
+    /* выводим всё заглавными буквами */
+    text-transform: uppercase;
+    /* размер шрифта */
+    font-size: 26px;
+    /* отступы сверху, по бокам и снизу */
+    padding: 1em 0 0 1em;
+    /* цвет шрифта */
+    color: #1a2b4c;
+    /* выравнивание по центру */
+    text-align: center;
+}
+/* общие стили кнопки */
+.btn-class-name {
+    /* основной цвет */
+    --primary: 255, 90, 120;
+    /* дополнительный цвет */
+    --secondary: 150, 50, 60;
+    /* ширина */
+    width: 60px;
+    /* высота */
+    height: 50px;
+    /* без рамок */
+    border: none;
+    /* без контура */
+    outline: none;
+    /* меняем форму курсора на указатель */
+    cursor: pointer;
+    /* внешний контур */
+    outline: 10px solid rgb(var(--primary), .5);
+    /* полное скругление */
+    border-radius: 100%;
+    /* относительное позиционирование */
+    position: relative;
+    /* анимация в течение 0,3 секунды */
+    transition: .3s;
+}
+
+/* стили заднего слоя кнопки */
+.btn-class-name .back {
+    /* фон */
+    background: rgb(var(--secondary));
+    /* полное скругление */
+    border-radius: 100%;
+    /* абсолютное позиционирование */
+    position: absolute;
+    /* отступ слева */
+    left: 0;
+    /* отступ сверху */
+    top: 0;
+    /* ширина */
+    width: 100%;
+    /* высота */
+    height: 100%;
+}
+/* стили переднего слоя кнопки */
+.btn-class-name .front {
+    /* фон в виде линейного градиента */
+    background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+    /* тень под элементом */
+    box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+    /* полное скругление */
+    border-radius: 100%;
+    /* абсолютное позиционирование */
+    position: absolute;
+    /* рамка */
+    border: 1px solid rgb(var(--secondary));
+    /* отступ слева */
+    left: 0;
+    /* отступ сверху */
+    top: 0;
+    /* ширина */
+    width: 100%;
+    /* высота */
+    height: 100%;
+    /* включаем флексбокс-модель */
+    display: flex;
+    /* горизонтальное выравнивание по центру */
+    justify-content: center;
+    /* вертикальное выравнивание по центру */
+    align-items: center;
+    /* смещение вниз для анимации нажатия */
+    transform: translateY(-15%);
+    /* анимация в течение 0,15 секунды */
+    transition: .15s;
+    /* цвет */
+    color: rgb(var(--secondary));
+}
+/* стили переднего слоя в активном состоянии */
+.btn-class-name:active .front {
+    /* без анимации нажатия */
+    transform: translateY(0%);
+    /* без тени */
+    box-shadow: 0 0;
+}
